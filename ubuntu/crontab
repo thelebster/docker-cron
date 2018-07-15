@@ -1,0 +1,13 @@
+# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │                                       7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * *  command to execute
+#
+# Redirecting the cron's commands output into the docker stdout and stderr
+# which are located respectively in /proc/1/fd/1 and /proc/1/fd/2
+* * * * * echo "Hello, world!" > /proc/1/fd/1 2>/proc/1/fd/2
